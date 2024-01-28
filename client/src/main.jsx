@@ -3,7 +3,7 @@ import Home from './components/Home/Home'
 import Fashion from './components/Fashion/Fashion'
 import Beauty from './components/Beauty/Beauty'
 import Appliances from './components/Appliance/Appliances'
-import Electronics from './components/Electronic/Electronics'
+
 import ReactDOM from 'react-dom/client'
 
 import "./index.css";
@@ -15,6 +15,7 @@ import {
 } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
+import Product from './components/Product.jsx/Product'
 
 
 const Layout = ()=>{
@@ -51,8 +52,8 @@ const router = createBrowserRouter([
         element: <Beauty/>,
       },
       {
-        path: "/product/Electronic",
-        element: <Electronics/>,
+        path: "/product",
+        element:<Product/>,
       },
     ]
   },
