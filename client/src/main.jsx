@@ -1,7 +1,6 @@
 import React from 'react'
 import Home from './components/Home/Home'
-import Fashion from './components/Fashion/Fashion'
-import Beauty from './components/Beauty/Beauty'
+
 import Appliances from './components/Appliance/Appliances'
 
 import ReactDOM from 'react-dom/client'
@@ -39,18 +38,12 @@ const router = createBrowserRouter([
         path: "/",
         element:<Home/>,
       },
-      {
-        path: "/product/clothing",
-        element: <Fashion/>,
-      },
+   
       {
         path: "/product/Appliance",
         element: <Appliances/>,
       },
-      {
-        path: "/product/Beauty",
-        element: <Beauty/>,
-      },
+     
       {
         path: "/product",
         element:<Product/>,
