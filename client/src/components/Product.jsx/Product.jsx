@@ -1,7 +1,12 @@
+import { useParams } from 'react-router-dom'
 import List from  '../List/List'
 import "./Product.scss"
+import { useState } from 'react'
 
 function Product() {
+  const id =parseInt(useParams().id)
+  const [maxPrice,setMaxPrice]=useState('')
+  const [sort,setSort]=useState('')
   return (
    <div className="products">
     <div className="left">
@@ -29,9 +34,9 @@ function Product() {
               type="range"
               min={0}
               max={1000}
-
+             onChange={(e)=>setMaxPrice(e.target.value)}
             />
-            <span>1000</span>
+            <span>{maxPrice}</span>
           </div>
         </div>
         <div className="filterItem">
@@ -42,7 +47,7 @@ function Product() {
               id="asc"
               value="asc"
               name="price"
-             
+             onChange={e=>setSort("asc")}
             />
             <label htmlFor="asc">Price (Lowest first)</label>
           </div>
@@ -50,9 +55,9 @@ function Product() {
             <input
               type="radio"
               id="desc"
-              value="desc"
+              value="desc "
               name="price"
-           
+              onChange={e=>setSort("desc")}
             />
             <label htmlFor="desc">Price (Highest first)</label>
           </div>
@@ -65,7 +70,7 @@ function Product() {
           alt=""
          
         />
-        <List/>
+        <List  cardId={id} maxPrice={maxPrice} sort={sort}/>
      </div>
    </div>
   )

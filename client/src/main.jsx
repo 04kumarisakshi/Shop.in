@@ -1,10 +1,8 @@
 import React from 'react'
 import Home from './components/Home/Home'
 
-import Appliances from './components/Appliance/Appliances'
-
 import ReactDOM from 'react-dom/client'
-
+import { Item } from './components/Items';
 import "./index.css";
 
 import {
@@ -38,12 +36,11 @@ const router = createBrowserRouter([
         path: "/",
         element:<Home/>,
       },
-   
       {
-        path: "/product/Appliance",
-        element: <Appliances/>,
+        path: "/product/:id",
+        element:<Item/>,
       },
-     
+  
       {
         path: "/product",
         element:<Product/>,
